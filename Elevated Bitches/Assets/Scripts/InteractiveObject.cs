@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractiveObject : MonoBehaviour
 {
     
-    public GameObject uiToActivate; 
+    public GameObject uiToActivate;
+    public UnityEvent onTrigger;
 
     
     public void Interact()
@@ -25,5 +27,7 @@ public class InteractiveObject : MonoBehaviour
                 Cursor.visible = false;
             }
         }
+
+        onTrigger.Invoke();
     }
 }
