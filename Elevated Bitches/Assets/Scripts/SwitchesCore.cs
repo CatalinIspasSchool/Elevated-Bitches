@@ -4,10 +4,14 @@ using UnityEngine.Events;
 public class SwitchesCore : MonoBehaviour
 {
 	public UnityEvent PuzzleComplete;
+	public SwitchesSecondary[] switchArray =
+	{
+		null,	null,	null,	null,	null,	null,	null,	null
+	};
 
 	bool[] lightMatrix =
 	{
-		false, false, false, false, false, false, false, false
+		false,	false,	false,	false,	false,	false,	false,	false
 	};
 	
 
@@ -25,12 +29,13 @@ public class SwitchesCore : MonoBehaviour
 
 	}
 
-	public void TriggerLight(int x)
+	public void TriggerLight(int[] targets)
 	{
-		while (x > 0)
+
+		foreach(int target in targets)
 		{
-			lightMatrix[x % 10] = !lightMatrix[x % 10];
-			x = x / 10;
+			lightMatrix[target] = !lightMatrix[target];
+			switchArray[target].SetStatus(lightMatrix[target]);
 		}
 	}
 }
