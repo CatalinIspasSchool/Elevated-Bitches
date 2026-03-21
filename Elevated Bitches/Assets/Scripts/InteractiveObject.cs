@@ -4,10 +4,18 @@ public class InteractiveObject : MonoBehaviour
 {
     
     public GameObject uiToActivate; 
+    public DialogueManager dialogueManager;
 
     
     public void Interact()
     {
+
+        if (dialogueManager != null)
+        {
+            
+            dialogueManager.StartDialogue();
+        }
+
         if (uiToActivate != null)
         {
             
