@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEngine.GraphicsBuffer;
 
 public class SwitchesCore : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class SwitchesCore : MonoBehaviour
 	{
 		false,	false,	false,	false,	false,	false,	false,	false
 	};
-	
+
 
 	private void Update()
 	{
@@ -29,10 +30,13 @@ public class SwitchesCore : MonoBehaviour
 
 	}
 
-	public void TriggerLight(int[] targets)
+	public void TriggerLight(int[] targets, int id)
 	{
 
-		foreach(int target in targets)
+		lightMatrix[id] = !lightMatrix[id];
+		switchArray[id].SetStatus(lightMatrix[id]);
+
+		foreach (int target in targets)
 		{
 			lightMatrix[target] = !lightMatrix[target];
 			switchArray[target].SetStatus(lightMatrix[target]);
