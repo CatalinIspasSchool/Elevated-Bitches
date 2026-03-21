@@ -13,10 +13,12 @@ public class SwitchesSecondary : MonoBehaviour
 	{
 		switchesCore = transform.parent.GetComponent<SwitchesCore>();
 		switchesCore.switchArray[indexNum] = this;
+		
 	}
 	public void FlipSwitch()
 	{
-		switchesCore.TriggerLight(targets);
+		
+		switchesCore.TriggerLight(targets, indexNum);
 	}
 
 	public void SetStatus(bool newStatus)
