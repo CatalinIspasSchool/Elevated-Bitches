@@ -1,26 +1,28 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 public class InteractiveObject : MonoBehaviour
 {
     
-    public GameObject uiToActivate;
-    public GameObject player;
-    public UnityEvent onTrigger;
-   
-    public CameraController cameracontroller;
+    public GameObject uiToActivate; 
+    public DialogueManager dialogueManager;
 
     
     public void Interact()
     {
+
+        if (dialogueManager != null)
+        {
+            
+            dialogueManager.StartDialogue();
+        }
+
         if (uiToActivate != null)
         {
             
             uiToActivate.SetActive(!uiToActivate.activeSelf);
-            player.GetComponentInChildren<CameraController>().enabled = false;
-            player.GetComponent<PlayerMovement>().enabled = false;
 
-			if (uiToActivate.activeSelf)
+            
+            if (uiToActivate.activeSelf)
             {
                 Cursor.lockState = CursorLockMode.None; 
                 Cursor.visible = true;
@@ -31,7 +33,5 @@ public class InteractiveObject : MonoBehaviour
                 Cursor.visible = false;
             }
         }
-
-        onTrigger.Invoke();
     }
 }

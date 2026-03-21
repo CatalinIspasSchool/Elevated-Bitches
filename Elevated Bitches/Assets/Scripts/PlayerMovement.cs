@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
 		moveDirection += transform.right * Input.GetAxis("Horizontal");
 
 		rb.MovePosition(transform.position + moveDirection * Time.deltaTime * movespeed);
-        //Debug.Log(Input.GetAxis("Vertical"));
         moveDirection = Vector3.zero;
 	}
 
