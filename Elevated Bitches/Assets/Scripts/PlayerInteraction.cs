@@ -32,7 +32,7 @@ public class PlayerInteraction : MonoBehaviour
             if (interactiveObj != null)
             {
                 
-                interactiveObj.Interact();
+               interactiveObj.Interact();
             }
         }
     }

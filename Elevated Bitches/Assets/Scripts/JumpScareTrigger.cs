@@ -3,12 +3,12 @@ using System.Collections;
 
 public class JumpscareTrigger : MonoBehaviour
 {
-    [Header("Setări Jumpscare")]
+    
     public GameObject jumpscareObject; 
     public float duration = 1.0f;      
     public bool destroyAfterUse = true; 
 
-    [Header("Efecte Cameră")]
+    
     public float shakeIntensity = 0.5f;
 
     private bool hasPlayed = false;

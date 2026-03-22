@@ -14,7 +14,7 @@ public class WireTaskSimple : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 
    
     public GameObject doorObject; 
-    public float downDistance = 2.5f; 
+    public float downDistance = 15.5f; 
     public float moveSpeed = 2f; 
 
     
@@ -149,7 +149,7 @@ public class WireTaskSimple : MonoBehaviour, IPointerDownHandler, IDragHandler, 
     {
         Vector3 startPosition = doorObject.transform.position;
         
-        Vector3 targetPosition = startPosition + (Vector3.down * downDistance);
+        Vector3 targetPosition = startPosition + (Vector3.up * downDistance);
         
         float elapsedTime = 0f;
         
