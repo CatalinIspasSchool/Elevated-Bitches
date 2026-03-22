@@ -21,8 +21,8 @@ public class InteractiveObject : MonoBehaviour
         {
             
             uiToActivate.SetActive(!uiToActivate.activeSelf);
-            player.GetComponentInChildren<CameraController>().enabled = !player.GetComponentInChildren<CameraController>().activeSelf;
-            player.GetComponent<PlayerMovement>().enabled = !player.GetComponent<PlayerMovement>().activeSelf;
+            player.GetComponentInChildren<CameraController>().enabled = !player.GetComponentInChildren<CameraController>().enabled;
+            player.GetComponent<PlayerMovement>().enabled = !player.GetComponent<PlayerMovement>().enabled;
 
 			if (uiToActivate.activeSelf)
             {

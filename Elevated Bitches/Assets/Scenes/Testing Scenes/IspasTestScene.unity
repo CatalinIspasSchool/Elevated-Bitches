@@ -152,10 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractiveObject
   uiToActivate: {fileID: 211608987}
+  dialogueManager: {fileID: 0}
   player: {fileID: 1117521902}
-  onTrigger:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!65 &60226619
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -926,10 +924,6 @@ PrefabInstance:
     - target: {fileID: 7553004363677118309, guid: 9ab59d57fa3a0824bab1296da72b7a6c, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 9199459306225675923, guid: 9ab59d57fa3a0824bab1296da72b7a6c, type: 3}
-      propertyPath: movespeed
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
