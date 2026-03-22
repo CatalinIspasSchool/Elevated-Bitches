@@ -1,38 +1,46 @@
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-//using UnityEngine.InputSystem;
-using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Rigidbody rb;
-    [SerializeField] float movespeed = 5f;
-	Vector3 moveDirection;
+    private Rigidbody rb;
+    [SerializeField] private float movespeed = 5f;
 
+    // Public so your Footsteps script can see it (fixes that Red Error)
+    public Vector3 moveDirection;
 
-
-	// Start is called once before the first execution of Update after the MonoBehaviour is created
-	void Start()
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        // Essential for 3D physics stability
+        rb.freezeRotation = true;
+        rb.useGravity = true;
+
+        // This is the "Anti-Ghosting" setting for small players/big walls
+        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        float x = Input.GetAxisRaw("Horizontal");
+        float z = Input.GetAxisRaw("Vertical");
 
-		//movement
-		moveDirection += transform.forward * Input.GetAxis("Vertical");
-		moveDirection += transform.right * Input.GetAxis("Horizontal");
+        // Calculate direction based on player's rotation
+        moveDirection = (transform.forward * z) + (transform.right * x);
 
-		rb.MovePosition(transform.position + moveDirection * Time.deltaTime * movespeed);
-        moveDirection = Vector3.zero;
-	}
+        // Fix the diagonal speed boost
+        if (moveDirection.magnitude > 1f)
+        {
+            moveDirection.Normalize();
+        }
+    }
 
-    //public void Move(InputAction.CallbackContext context)
-    //{
-    //    var v = context.ReadValue<Vector2>();
-    //    moveDirection = new Vector3(v.x,0,v.y);
-    //    Debug.Log(v);
-    //}
+    void FixedUpdate()
+    {
+        // Move by setting velocity. This is the most "solid" way to hit walls.
+        Vector3 targetVelocity = moveDirection * movespeed;
+
+        // We keep the existing Y velocity so gravity still works!
+        rb.linearVelocity = new Vector3(targetVelocity.x, rb.linearVelocity.y, targetVelocity.z);
+    }
 }
