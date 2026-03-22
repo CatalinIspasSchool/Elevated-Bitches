@@ -8,7 +8,6 @@ public class InteractiveObject : MonoBehaviour
     public GameObject player;
     public UnityEvent onTrigger;
    
-    public CameraController cameracontroller;
 
     
     public void Interact()
@@ -17,6 +16,7 @@ public class InteractiveObject : MonoBehaviour
         {
             
             uiToActivate.SetActive(!uiToActivate.activeSelf);
+            Debug.Log("Eh");
             player.GetComponentInChildren<CameraController>().enabled = false;
             player.GetComponent<PlayerMovement>().enabled = false;
 
