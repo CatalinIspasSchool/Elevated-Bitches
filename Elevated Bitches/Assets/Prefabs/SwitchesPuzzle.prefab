@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchesSecondary
   indexNum: 5
-  targets: 
+  targets: 0000000004000000
   activeChild: {fileID: 2065927694381956629}
   inactiveChild: {fileID: 4825405493701563635}
 --- !u!1 &2034484131261195631
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchesSecondary
   indexNum: 7
-  targets: 
+  targets: 0100000004000000
   activeChild: {fileID: 2178649589166082255}
   inactiveChild: {fileID: 2822729375767308648}
 --- !u!1 &2065927694381956629
@@ -900,7 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchesSecondary
   indexNum: 6
-  targets: 
+  targets: 010000000200000005000000
   activeChild: {fileID: 5170817639701750331}
   inactiveChild: {fileID: 1414204029773633820}
 --- !u!1 &3813942451242164245
@@ -1201,7 +1201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchesSecondary
   indexNum: 4
-  targets: 
+  targets: 0500000007000000
   activeChild: {fileID: 3825232001167293803}
   inactiveChild: {fileID: 1352739016286261449}
 --- !u!1 &4603287399763342150
@@ -1352,7 +1352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchesSecondary
   indexNum: 2
-  targets: 
+  targets: 0000000003000000
   activeChild: {fileID: 8077719176201227264}
   inactiveChild: {fileID: 8396187725871005786}
 --- !u!1 &4825405493701563635
@@ -1728,7 +1728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchesSecondary
   indexNum: 0
-  targets: 
+  targets: 0100000005000000
   activeChild: {fileID: 1594183240359631509}
   inactiveChild: {fileID: 8406090653085150801}
 --- !u!1 &6344535811081875389
@@ -2029,7 +2029,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchesSecondary
   indexNum: 1
-  targets: 
+  targets: 0300000006000000
   activeChild: {fileID: 5837866086483713535}
   inactiveChild: {fileID: 3813942451242164245}
 --- !u!1 &7998719560636645452
@@ -2545,6 +2545,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SwitchesSecondary
   indexNum: 3
-  targets: 
+  targets: 0000000007000000
   activeChild: {fileID: 7096030190509452833}
   inactiveChild: {fileID: 6344535811081875389}
