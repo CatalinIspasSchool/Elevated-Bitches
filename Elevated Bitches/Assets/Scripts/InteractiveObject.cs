@@ -11,7 +11,10 @@ public class InteractiveObject : MonoBehaviour
     public void Interact()
     {
 
-        if (dialogueManager != null)
+		player.GetComponentInChildren<CameraController>().enabled = !player.GetComponentInChildren<CameraController>().enabled;
+		player.GetComponent<PlayerMovement>().enabled = !player.GetComponent<PlayerMovement>().enabled;
+
+		if (dialogueManager != null)
         {
             
             dialogueManager.StartDialogue();
@@ -21,8 +24,6 @@ public class InteractiveObject : MonoBehaviour
         {
             
             uiToActivate.SetActive(!uiToActivate.activeSelf);
-            player.GetComponentInChildren<CameraController>().enabled = !player.GetComponentInChildren<CameraController>().enabled;
-            player.GetComponent<PlayerMovement>().enabled = !player.GetComponent<PlayerMovement>().enabled;
 
 			if (uiToActivate.activeSelf)
             {
