@@ -15,7 +15,7 @@ public class WireTaskSimple : MonoBehaviour, IPointerDownHandler, IDragHandler, 
    
     public GameObject doorObject; 
     public float downDistance = 15.5f; 
-    public float moveSpeed = 2f; 
+    public float moveSpeed = 5f; 
 
     
     public MonoBehaviour playerMovement; 
@@ -136,7 +136,7 @@ public class WireTaskSimple : MonoBehaviour, IPointerDownHandler, IDragHandler, 
             
             if (doorObject != null)
             {
-                StartCoroutine(MoveDoorDown());
+                StartCoroutine(MoveDoorUp());
             }
 
             
@@ -145,28 +145,30 @@ public class WireTaskSimple : MonoBehaviour, IPointerDownHandler, IDragHandler, 
     }
 
     
-    IEnumerator MoveDoorDown()
+    IEnumerator MoveDoorUp()
     {
         Vector3 startPosition = doorObject.transform.position;
         
+        // Changing the target to move higher up
+        // Increase 'downDistance' in the inspector to move it more
         Vector3 targetPosition = startPosition + (Vector3.up * downDistance);
         
         float elapsedTime = 0f;
-        
         float duration = downDistance / moveSpeed;
 
         while (elapsedTime < duration)
         {
-            
-            doorObject.transform.position = Vector3.MoveTowards(doorObject.transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            doorObject.transform.position = Vector3.MoveTowards(
+                doorObject.transform.position, 
+                targetPosition, 
+                moveSpeed * Time.deltaTime
+            );
             
             elapsedTime += Time.deltaTime;
             yield return null; 
         }
 
-        
         doorObject.transform.position = targetPosition;
-        Debug.Log("Usa a ajuns jos.");
     }
 
     void CloseMinigame()
